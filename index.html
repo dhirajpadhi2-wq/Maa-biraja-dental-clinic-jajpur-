@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maa Biraja Dental Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-content">
+    <h1>Maa Biraja Dental Clinic</h1>
+    <p>Your Smile, Our Priority 🦷</p>
+    <div class="buttons">
+      <a href="tel:+919090390085" class="btn call">📞 Call Now</a>
+      <a href="https://wa.me/919090390085" target="_blank" class="btn whatsapp">💬 WhatsApp</a>
+      <button class="btn appoint" onclick="openForm()">📅 Book Appointment</button>
+    </div>
+  </div>
+</header>
+
+<!-- ABOUT -->
+<section data-aos="fade-up">
+  <h2>About Us</h2>
+  <p>We provide advanced dental treatments with modern equipment and experienced care for your perfect smile.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="services" data-aos="fade-up">
+  <h2>Our Services</h2>
+  <div class="service-box">
+    <div class="card">🦷 Teeth Cleaning</div>
+    <div class="card">😁 Root Canal</div>
+    <div class="card">✨ Smile Designing</div>
+    <div class="card">😬 Braces & Aligners</div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section data-aos="fade-up">
+  <h2>Before & After Smile</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1588776814546-ec7e5f1b5f5c" />
+    <img src="https://images.unsplash.com/photo-1606813909024-6d6df5b7d0c7" />
+    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787" />
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" data-aos="fade-up">
+  <h2>Patient Reviews</h2>
+  <div class="review-box">
+    <div class="review">⭐⭐⭐⭐⭐ <br> Excellent treatment & friendly doctor!</div>
+    <div class="review">⭐⭐⭐⭐⭐ <br> Very clean clinic and affordable pricing.</div>
+    <div class="review">⭐⭐⭐⭐⭐ <br> Highly recommended for dental care.</div>
+  </div>
+</section>
+
+<!-- MAP -->
+<section data-aos="fade-up">
+  <h2>Visit Us</h2>
+  <iframe 
+  src="https://www.google.com/maps?q=Jajpur%20Odisha&output=embed"
+  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  © 2026 Maa Biraja Dental Clinic | Jajpur, Odisha
+</footer>
+
+<!-- FLOATING CALL -->
+<a href="tel:+919090390085" class="floating-call">📞</a>
+
+<!-- APPOINTMENT POPUP -->
+<div class="popup" id="appointmentForm">
+  <div class="popup-content">
+    <span class="close" onclick="closeForm()">×</span>
+    <h3>Book Appointment</h3>
+    <input type="text" placeholder="Your Name">
+    <input type="tel" placeholder="Phone Number">
+    <input type="date">
+    <button class="submit-btn">Submit</button>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+</body>
+</html>
