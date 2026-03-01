@@ -8,87 +8,189 @@
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f4f9ff;color:#333}
+
+/* NAVBAR */
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+position:fixed;
+width:100%;
+z-index:1000;
+}
+nav img{height:45px}
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#0f9bff;
+font-weight:500;
+}
+
+/* HERO */
+.hero{
+height:100vh;
+background:linear-gradient(135deg,#0f9bff,#00c6ff);
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+padding:20px;
+}
+.hero h1{font-size:40px}
+.hero p{margin:15px 0}
+
+.btn{
+padding:12px 25px;
+margin:5px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-weight:500;
+transition:0.3s;
+text-decoration:none;
+display:inline-block;
+}
+.call{background:white;color:#0f9bff}
+.whatsapp{background:#25D366;color:white}
+.appoint{background:#ff9800;color:white}
+.btn:hover{transform:scale(1.1)}
+
+section{padding:80px 20px;text-align:center}
+
+.service-box{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
+}
+.card{
+background:#0f9bff;
+color:white;
+padding:25px;
+border-radius:15px;
+width:200px;
+transition:0.3s;
+}
+.card:hover{transform:translateY(-10px);background:#007acc}
+
+/* Contact Form */
+.contact-form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+.contact-form input,
+.contact-form textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+.contact-form button{
+background:#0f9bff;
+color:white;
+padding:10px;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* Floating */
+.floating-call{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff5722;
+color:white;
+padding:15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+box-shadow:0 5px 15px rgba(0,0,0,0.3);
+}
+
+footer{
+background:#0f9bff;
+color:white;
+padding:20px;
+text-align:center;
+}
+</style>
 </head>
 <body>
 
-<!-- HERO -->
+<nav>
+<img src="https://i.imgur.com/7bKQ8KX.png" alt="Clinic Logo">
+<div>
+<a href="#services">Services</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+
 <header class="hero">
-  <div class="hero-content">
-    <h1>Maa Biraja Dental Clinic</h1>
-    <p>Your Smile, Our Priority 🦷</p>
-    <div class="buttons">
-      <a href="tel:+919090390085" class="btn call">📞 Call Now</a>
-      <a href="https://wa.me/919090390085" target="_blank" class="btn whatsapp">💬 WhatsApp</a>
-      <button class="btn appoint" onclick="openForm()">📅 Book Appointment</button>
-    </div>
-  </div>
+<div>
+<h1>Maa Biraja Dental Clinic</h1>
+<p>Your Smile, Our Priority 🦷</p>
+
+<a href="tel:+919090390085" class="btn call">📞 Call Now</a>
+
+<!-- WhatsApp Auto Message -->
+<a href="https://wa.me/919090390085?text=Hello%20I%20want%20to%20book%20an%20appointment%20at%20Maa%20Biraja%20Dental%20Clinic"
+target="_blank" class="btn whatsapp">💬 WhatsApp Booking</a>
+
+<a href="#contact" class="btn appoint">📅 Book Appointment</a>
+</div>
 </header>
 
-<!-- ABOUT -->
-<section data-aos="fade-up">
-  <h2>About Us</h2>
-  <p>We provide advanced dental treatments with modern equipment and experienced care for your perfect smile.</p>
+<section id="services" data-aos="fade-up">
+<h2>Our Services</h2>
+<div class="service-box">
+<div class="card">🦷 Teeth Cleaning</div>
+<div class="card">😁 Root Canal</div>
+<div class="card">✨ Smile Designing</div>
+<div class="card">😬 Braces & Aligners</div>
+</div>
 </section>
 
-<!-- SERVICES -->
-<section class="services" data-aos="fade-up">
-  <h2>Our Services</h2>
-  <div class="service-box">
-    <div class="card">🦷 Teeth Cleaning</div>
-    <div class="card">😁 Root Canal</div>
-    <div class="card">✨ Smile Designing</div>
-    <div class="card">😬 Braces & Aligners</div>
-  </div>
+<section id="contact" data-aos="fade-up">
+<h2>Book Appointment</h2>
+
+<!-- EMAIL INTEGRATION USING FORMSUBMIT -->
+<form class="contact-form"
+action="https://formsubmit.co/YOUR-EMAIL@gmail.com"
+method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="tel" name="phone" placeholder="Phone Number" required>
+<textarea name="message" placeholder="Your Message"></textarea>
+
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_next" value="https://yourusername.github.io/">
+
+<button type="submit">Submit Appointment</button>
+</form>
+
 </section>
 
-<!-- GALLERY -->
-<section data-aos="fade-up">
-  <h2>Before & After Smile</h2>
-  <div class="gallery">
-    <img src="https://images.unsplash.com/photo-1588776814546-ec7e5f1b5f5c" />
-    <img src="https://images.unsplash.com/photo-1606813909024-6d6df5b7d0c7" />
-    <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787" />
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews" data-aos="fade-up">
-  <h2>Patient Reviews</h2>
-  <div class="review-box">
-    <div class="review">⭐⭐⭐⭐⭐ <br> Excellent treatment & friendly doctor!</div>
-    <div class="review">⭐⭐⭐⭐⭐ <br> Very clean clinic and affordable pricing.</div>
-    <div class="review">⭐⭐⭐⭐⭐ <br> Highly recommended for dental care.</div>
-  </div>
-</section>
-
-<!-- MAP -->
-<section data-aos="fade-up">
-  <h2>Visit Us</h2>
-  <iframe 
-  src="https://www.google.com/maps?q=Jajpur%20Odisha&output=embed"
-  width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  © 2026 Maa Biraja Dental Clinic | Jajpur, Odisha
+© 2026 Maa Biraja Dental Clinic | Jajpur, Odisha
 </footer>
 
-<!-- FLOATING CALL -->
 <a href="tel:+919090390085" class="floating-call">📞</a>
 
-<!-- APPOINTMENT POPUP -->
-<div class="popup" id="appointmentForm">
-  <div class="popup-content">
-    <span class="close" onclick="closeForm()">×</span>
-    <h3>Book Appointment</h3>
-    <input type="text" placeholder="Your Name">
-    <input type="tel" placeholder="Phone Number">
-    <input type="date">
-    <button class="submit-btn">Submit</button>
-  </div>
-</div>
-
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
+
 </body>
 </html>
