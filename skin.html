@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maa Biraja Skin Clinic</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f9f9ff;
+}
+
+/* NAV */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+box-shadow:0 3px 10px rgba(0,0,0,0.1);
+position:fixed;
+width:100%;
+z-index:1000;
+}
+
+nav h2{
+color:#ff4da6;
+}
+
+nav a{
+text-decoration:none;
+margin-left:20px;
+color:#333;
+font-weight:500;
+}
+
+.menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+nav div{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:60px;
+right:20px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+nav div.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+
+/* HERO */
+
+.hero{
+height:100vh;
+background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://images.unsplash.com/photo-1616394584738-fc6e612e71b9");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+color:white;
+}
+
+.hero h1{
+font-size:45px;
+}
+
+.btn{
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+margin:5px;
+}
+
+.call{
+background:white;
+color:#ff4da6;
+}
+
+.whatsapp{
+background:#25D366;
+color:white;
+}
+
+/* SECTION */
+
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+/* SERVICES */
+
+.services{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
+}
+
+.service{
+background:white;
+padding:25px;
+border-radius:15px;
+width:220px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+transition:.3s;
+}
+
+.service:hover{
+transform:translateY(-10px);
+}
+
+/* GALLERY */
+
+.gallery{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:20px;
+margin-top:30px;
+}
+
+.gallery img{
+width:250px;
+height:180px;
+object-fit:cover;
+border-radius:10px;
+}
+
+/* BEFORE AFTER */
+
+.slider{
+max-width:600px;
+margin:auto;
+}
+
+.slider img{
+width:100%;
+border-radius:10px;
+}
+
+/* REVIEWS */
+
+.reviews{
+background:#ffeaf5;
+}
+
+.review-box{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+margin-top:30px;
+}
+
+.review{
+background:white;
+padding:20px;
+width:250px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* CONTACT */
+
+.contact{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.contact input,
+.contact textarea{
+padding:10px;
+border:1px solid #ccc;
+border-radius:5px;
+}
+
+.contact button{
+background:#ff4da6;
+color:white;
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+/* FLOAT */
+
+.call-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#ff4da6;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+.whatsapp-float{
+position:fixed;
+bottom:80px;
+right:20px;
+background:#25D366;
+color:white;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+footer{
+background:#ff4da6;
+color:white;
+padding:20px;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>Maa Biraja Skin</h2>
+
+<span class="menu-btn">☰</span>
+
+<div id="menu">
+
+<a href="index.html">Dental</a>
+<a href="skin.html">Skin Clinic</a>
+<a href="#services">Services</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Appointment</a>
+
+</div>
+
+</nav>
+
+<header class="hero">
+
+<div>
+
+<h1>Healthy & Glowing Skin</h1>
+
+<p>Advanced Skin Treatment in Jajpur</p>
+
+<a href="tel:+919090390085" class="btn call">
+📞 Call Now
+</a>
+
+<a href="https://wa.me/919090390085?text=Hello%20I%20want%20to%20book%20skin%20appointment"
+class="btn whatsapp">
+💬 WhatsApp Booking
+</a>
+
+</div>
+
+</header>
+
+<section id="services">
+
+<h2>Skin Treatments</h2>
+
+<div class="services">
+
+<div class="service">✨ Acne Treatment</div>
+<div class="service">🌟 Skin Glow Therapy</div>
+<div class="service">💉 Botox Treatment</div>
+<div class="service">🌿 Pigmentation Removal</div>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Before & After Treatment</h2>
+
+<div class="slider">
+
+<img id="skinSlider" src="before.jpg">
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Skin Gallery</h2>
+
+<div class="gallery">
+
+<img src="smile1.jpg">
+<img src="smile2.jpg">
+<img src="smile3.jpg">
+
+</div>
+
+</section>
+
+<section id="reviews" class="reviews">
+
+<h2>Google Reviews</h2>
+
+<div class="review-box">
+
+<div class="review">
+⭐⭐⭐⭐⭐<br>
+Amazing skin treatment result.
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br>
+Doctor is very professional.
+</div>
+
+<div class="review">
+⭐⭐⭐⭐⭐<br>
+Highly recommended clinic.
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Book Skin Appointment</h2>
+
+<form class="contact"
+action="https://formsubmit.co/YOUR-EMAIL@gmail.com"
+method="POST">
+
+<input type="text" name="name" placeholder="Your Name" required>
+
+<input type="tel" name="phone" placeholder="Phone Number" required>
+
+<input type="date" name="date" required>
+
+<textarea name="message" placeholder="Skin Problem"></textarea>
+
+<button type="submit">
+Book Appointment
+</button>
+
+</form>
+
+<iframe
+src="https://www.google.com/maps?q=Jajpur%20Odisha&output=embed"
+width="100%"
+height="300"
+style="border:0;margin-top:30px;">
+</iframe>
+
+</section>
+
+<footer>
+
+© 2026 Maa Biraja Skin Clinic | Jajpur Odisha
+
+</footer>
+
+<a href="tel:+919090390085" class="call-btn">
+📞
+</a>
+
+<a href="https://wa.me/919090390085?text=Hello%20I%20want%20to%20book%20skin%20appointment"
+class="whatsapp-float">
+💬
+</a>
+
+<script>
+
+/* Mobile Menu */
+
+const menuBtn=document.querySelector(".menu-btn");
+const menu=document.getElementById("menu");
+
+menuBtn.onclick=()=>{
+menu.classList.toggle("show");
+}
+
+/* Before After Slider */
+
+let skinImages=[
+"before.jpg",
+"after.jpg"
+];
+
+let i=0;
+
+setInterval(()=>{
+
+document.getElementById("skinSlider").src=skinImages[i];
+
+i++;
+
+if(i==skinImages.length){
+i=0;
+}
+
+},2500);
+
+</script>
+
+</body>
+</html>
