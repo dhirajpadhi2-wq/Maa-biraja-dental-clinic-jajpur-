@@ -46,12 +46,40 @@ color:#333;
 font-weight:500;
 }
 
+  .menu-btn{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+nav div{
+display:none;
+flex-direction:column;
+background:white;
+position:absolute;
+top:60px;
+right:20px;
+padding:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+nav div.show{
+display:flex;
+}
+
+.menu-btn{
+display:block;
+}
+
+}
+  
 /* HERO */
 
 .hero{
 height:100vh;
-background:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
-url("https://images.unsplash.com/photo-1588776814546-ec7e5f1b5f5c");
+background-image:linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("https://images.unsplash.com/photo-1588776814546-ec7e5f1b5f5c");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -60,6 +88,7 @@ align-items:center;
 text-align:center;
 color:white;
 padding:20px;
+transition:1s;
 }
 
 .hero h1{
@@ -286,13 +315,20 @@ animation:fadeUp 1s;
 <body>
 
 <nav>
+
 <h2>Maa Biraja Dental</h2>
-<div>
+
+<span class="menu-btn">☰</span>
+
+<div id="menu">
+
 <a href="#">Home</a>
 <a href="#services">Services</a>
 <a href="#doctor">Doctor</a>
 <a href="#contact">Contact</a>
+
 </div>
+
 </nav>
 
 <header class="hero">
@@ -326,17 +362,17 @@ class="btn whatsapp">
 <section class="stats fade">
 
 <div class="stat">
-<h2>1000+</h2>
+<h2 class="counter" data-target="1000">0</h2>
 <p>Happy Patients</p>
 </div>
 
 <div class="stat">
-<h2>500+</h2>
+<h2 class="counter" data-target="500">0</h2>
 <p>Root Canal</p>
 </div>
 
 <div class="stat">
-<h2>10+</h2>
+<h2 class="counter" data-target="10">0</h2>
 <p>Years Experience</p>
 </div>
 
@@ -474,23 +510,90 @@ style="border:0;margin-top:30px;">
 📞
 </a>
 
-  <script>
+<script>
 
-const faders=document.querySelectorAll("section");
+/* Scroll Animation */
+
+const faders=document.querySelectorAll(".fade");
 
 window.addEventListener("scroll",()=>{
 
 faders.forEach(el=>{
+
 const top=el.getBoundingClientRect().top;
 
 if(top<window.innerHeight-100){
 el.classList.add("show");
 }
-});
 
 });
 
-  </script>
+});
+
+/* Mobile Menu */
+
+const menuBtn=document.querySelector(".menu-btn");
+const menu=document.getElementById("menu");
+
+menuBtn.onclick=()=>{
+menu.classList.toggle("show");
+}
+
+  /* Counter Animation */
+
+const counters=document.querySelectorAll(".counter");
+
+counters.forEach(counter=>{
+
+const update=()=>{
+
+const target=+counter.getAttribute("data-target");
+const current=+counter.innerText;
+const increment=target/100;
+
+if(current<target){
+
+counter.innerText=Math.ceil(current+increment);
+setTimeout(update,30);
+
+}else{
+
+counter.innerText=target;
+
+}
+
+};
+
+update();
+
+});
+
+  /* Hero Image Slider */
+
+const hero=document.querySelector(".hero");
+
+let images=[
+"https://images.unsplash.com/photo-1588776814546-ec7e5f1b5f5c",
+"https://images.unsplash.com/photo-1609840114035-3c981b782dfe",
+"https://images.unsplash.com/photo-1606813909024-6d6df5b7d0c7"
+];
+
+let i=0;
+
+setInterval(()=>{
+
+hero.style.backgroundImage=
+"linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url("+images[i]+")";
+
+i++;
+
+if(i==images.length){
+i=0;
+}
+
+},3000);
+  
+</script>
   
 </body>
 </html>
